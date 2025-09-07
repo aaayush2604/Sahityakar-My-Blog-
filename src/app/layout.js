@@ -14,7 +14,15 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "My Blog",
-  description: "A blog built with Next.js",
+  description:
+    "A blog built with Next.js, for Bookish Reviews and Fiction Musings",
+  openGraph: {
+    type: "website",
+    siteName: "My Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }) {

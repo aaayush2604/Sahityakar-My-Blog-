@@ -1,6 +1,30 @@
 import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
+  const post = await getPostBySlug(slug);
+
+  return {
+    title: post.title,
+    description: post.excerpt || `Read ${post.title} on my blog`,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `https://yourdomain.com/blog/${slug}`,
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags || [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
+
 export default async function BlogPostPage({ params }) {
   const { slug } = params;
 
@@ -40,6 +64,23 @@ export default async function BlogPostPage({ params }) {
           </ul>
         </div>
       )}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            datePublished: post.date,
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            description: post.excerpt,
+          }),
+        }}
+      />
     </section>
   );
 }
