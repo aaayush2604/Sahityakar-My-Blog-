@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         <main>{children}</main>
-        <footer className="py-4 text-center text-gray-500 border-t bg-white mt-11">
+        <footer className="py-4 text-center text-gray-500 border-t bg-white">
           © {new Date().getFullYear()} My Blog. All rights reserved.
         </footer>
       </body>
