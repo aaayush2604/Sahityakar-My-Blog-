@@ -1,63 +1,48 @@
 import { getAllPosts } from "@/lib/posts";
 import PostCard from "@/components/PostCard";
 import Link from "next/link";
+import BlogCard from "@/components/BlogCard";
 
 export default function Home() {
-  const recentPosts = getAllPosts().slice(0, 4);
+  const recentPosts = getAllPosts().slice(0, 5);
 
   return (
     <>
-      <header className="text-center py-16 bg-black text-white">
-        <h1 className="text-4xl font-bold">Welcome to My Blog</h1>
-        <p className="mt-4 text-lg">
-          A place where I share tutorials, thoughts, and stories.
-        </p>
+      <header className="relative h-[80vh] flex items-center justify-center bg-black">
+        <div className="absolute inset-0">
+          <img
+            src="/assets/images/HeroImage.jpg"
+            alt="Blog background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="relative z-10 bg-white rounded-xl shadow-lg p-10 max-w-3xl text-center">
+          <h1 className="text-4xl font-bold text-black">Welcome to My Blog</h1>
+          <p className="mt-4 text-lg text-gray-700">
+            A place where I share tutorials, thoughts, and stories.
+          </p>
+        </div>
       </header>
 
       <main className="max-w-4xl mx-auto py-16 px-4">
-        {/* Latest Posts Section */}
         <section aria-labelledby="latest-posts">
           <h2 id="latest-posts" className="text-2xl font-semibold mb-6">
             Latest Posts
           </h2>
-          <div className="grid gap-6 md:grid-cols-2">
+
+          <div className="columns-1 sm:columns-2 gap-6">
             {recentPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+              <div key={post.slug} className="mb-6 break-inside-avoid">
+                <BlogCard
+                  title={post.title}
+                  author={post.author}
+                  excerpt={post.excerpt}
+                  image={post.image}
+                />
+              </div>
             ))}
           </div>
-        </section>
-
-        {/* About Me Section */}
-        <section
-          aria-labelledby="about-me"
-          className="py-10 bg-black text-white px-8 rounded mt-12"
-        >
-          <h2 id="about-me" className="text-2xl font-semibold mb-4">
-            About Me
-          </h2>
-          <p className="text-lg">
-            I’m a passionate web developer building modern applications.
-            <Link href="/about" className="underline ml-2">
-              Read More
-            </Link>
-          </p>
-        </section>
-
-        {/* Call-to-Action Section */}
-        <section
-          aria-labelledby="contact-me"
-          className="py-12 text-center mt-12"
-        >
-          <h2 id="contact-me" className="text-2xl font-semibold mb-4">
-            Let’s Collaborate
-          </h2>
-          <p className="text-lg mb-4">Got a question or want to collaborate?</p>
-          <Link
-            href="/contact"
-            className="text-blue-600 hover:underline text-lg"
-          >
-            Contact Me
-          </Link>
         </section>
       </main>
     </>
