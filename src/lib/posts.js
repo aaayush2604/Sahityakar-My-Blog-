@@ -35,6 +35,7 @@ export async function getPostBySlug(slug) {
     date: data.date,
     author: data.author,
     tags: data.tags,
+    image: data.image,
     contentHtml,
   };
 }
