@@ -17,9 +17,11 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 bg-white rounded-xl shadow-lg p-10 max-w-3xl text-center">
-          <h1 className="text-4xl font-bold text-black">Welcome to My Blog</h1>
-          <p className="mt-4 text-lg text-gray-700">
+        <div className="relative z-10 bg-white shadow-lg p-10 w-[80%] max-w-3xl text-center">
+          <h1 className="text-2xl sm:text-4xl font-bold text-black">
+            Welcome to My Blog
+          </h1>
+          <p className="mt-4 text-sm sm:text-lg text-gray-700">
             A place where I share tutorials, thoughts, and stories.
           </p>
         </div>
@@ -27,18 +29,22 @@ export default function Home() {
 
       <main className="max-w-4xl mx-auto py-16 px-4">
         <section aria-labelledby="latest-posts">
-          <h2 id="latest-posts" className="text-2xl font-semibold mb-6">
+          <h2
+            id="latest-posts"
+            className="text-2xl font-semibold mb-6 text-white"
+          >
             Latest Posts
           </h2>
 
           <div className="columns-1 sm:columns-2 gap-6">
             {recentPosts.map((post) => (
-              <div key={post.slug} className="mb-6 break-inside-avoid">
+              <div key={post.slug} className="sm:mt-20 mb-6 break-inside-avoid">
                 <BlogCard
                   title={post.title}
                   author={post.author}
                   excerpt={post.excerpt}
                   image={post.image}
+                  slug={post.slug}
                 />
               </div>
             ))}
