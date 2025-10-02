@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/global.css";
 import Link from "next/link";
+import Navbar from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--primary)]`}
       >
-        <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
+        {/* <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
           <nav className="flex items-center justify-between px-6 py-4 border-b  mx-auto">
             <Link href="/">
               <h1 className="text-xl font-bold">My Blog</h1>
@@ -54,6 +55,9 @@ export default function RootLayout({ children }) {
               </li>
             </ul>
           </nav>
+        </header> */}
+        <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
+          <Navbar />
         </header>
         <main>{children}</main>
         <footer className="py-4 text-center text-gray-500 border-t bg-white">
