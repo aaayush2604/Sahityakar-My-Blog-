@@ -54,12 +54,12 @@ export default async function BlogPostPage({ params }) {
       )}
 
       {/* Post Content */}
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <h1 className="text-3xl font-bold mb-4 p-1.5">{post.title}</h1>
+      <p className="text-gray-500 text-sm mb-6 p-1.5">
         {post.date} • {post.author}
       </p>
       <div
-        className="prose max-w-none mb-8 text-white"
+        className="prose max-w-none mb-8 text-white p-1.5"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
 
