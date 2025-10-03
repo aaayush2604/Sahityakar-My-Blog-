@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function BlogListCard({ post }) {
   return (
-    <div className="relative max-h-[40vh] flex flex-col md:flex-row w-full bg-white shadow-sm border border-slate-200 rounded-lg">
-      {/* Image */}
-      <div className="relative p-2.5 md:w-2/5 shrink-0 overflow-hidden">
+    <div className="relative flex flex-col md:flex-row w-full bg-white shadow-sm border border-slate-200 rounded-lg overflow-hidden">
+      {/* Image block (only for md+) */}
+      <div className="hidden md:block relative p-2.5 md:h-60 md:w-2/5 shrink-0 overflow-hidden">
         <img
           src={post.image || "/assets/images/default.jpg"} // fallback image
           alt={post.title}
@@ -13,9 +13,28 @@ export default function BlogListCard({ post }) {
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col justify-between">
-        <div>
-          {/* Category or Tag */}
+      <div
+        className={`
+      relative p-6 flex flex-col justify-between 
+      md:bg-white md:text-slate-800 text-white
+    `}
+      >
+        {/* Small screen background image + overlay */}
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            backgroundImage: `url(${
+              post.image || "/assets/images/default.jpg"
+            })`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40 md:hidden"></div>
+
+        {/* Actual content (z-10 so it’s above overlays) */}
+        <div className="relative z-10">
+          {/* Tags */}
           {post.tags && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-4">
               {post.tags.map((tag, index) => (
@@ -30,23 +49,19 @@ export default function BlogListCard({ post }) {
           )}
 
           {/* Title */}
-          <h4 className="mb-2 text-slate-800 text-xl font-semibold">
-            {post.title}
-          </h4>
+          <h4 className="mb-2 text-xl font-semibold">{post.title}</h4>
 
           {/* Excerpt */}
           {post.excerpt && (
-            <p className="mb-8 text-slate-600 leading-normal font-light">
-              {post.excerpt}
-            </p>
+            <p className="mb-8 leading-normal font-light">{post.excerpt}</p>
           )}
         </div>
 
-        {/* Learn More Link */}
-        <div>
+        {/* Learn More link */}
+        <div className="relative z-10">
           <Link
             href={`/blog/${post.slug}`}
-            className="text-slate-800 font-semibold text-sm hover:underline flex items-center"
+            className="font-semibold text-sm hover:underline flex items-center"
           >
             Learn More
             <svg
