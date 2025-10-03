@@ -16,6 +16,11 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6">
           <li>
+            <Link href="/" className="hover:underline">
+              Home
+            </Link>
+          </li>
+          <li>
             <Link href="/blog" className="hover:underline">
               Blogs
             </Link>
@@ -44,6 +49,15 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <ul className="md:hidden absolute top-full left-0 w-full bg-[var(--primary)] flex flex-col px-6 py-4 space-y-3 shadow-lg z-40">
+          <li>
+            <Link
+              href="/"
+              className="hover:underline"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+          </li>
           <li>
             <Link
               href="/blog"

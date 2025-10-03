@@ -32,30 +32,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--primary)]`}
       >
-        {/* <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
-          <nav className="flex items-center justify-between px-6 py-4 border-b  mx-auto">
-            <Link href="/">
-              <h1 className="text-xl font-bold">My Blog</h1>
-            </Link>
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="/blog" className="hover:underline">
-                  Blogs
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:underline">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:underline">
-                  Contact Me
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header> */}
         <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
           <Navbar />
         </header>
