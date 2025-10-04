@@ -8,9 +8,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-6 py-4 mx-auto">
+      <nav className="flex items-center justify-between px-2 md:px-6 py-4 mx-auto">
         <Link href="/">
-          <h1 className="text-xl font-bold">My Blog</h1>
+          <div className="flex md:space-x-2 items-center justify-center">
+            <img src="/favicon.png" alt="" className="w-11 h-11" />
+            <h1 className="text-sm md:text-xl font-bold">Aayush's Blog</h1>
+          </div>
         </Link>
 
         {/* Desktop Menu */}

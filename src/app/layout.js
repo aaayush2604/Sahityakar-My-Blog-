@@ -14,12 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Blog",
+  title: "Aayush's Blog",
   description:
     "A blog built with Next.js, for Bookish Reviews and Fiction Musings",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     type: "website",
-    siteName: "My Blog",
+    siteName: "Aayush's Blog",
   },
   twitter: {
     card: "summary_large_image",
@@ -30,13 +33,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--primary)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--primary)] flex flex-col min-h-screen`}
       >
         <header className="sticky top-0 z-50 bg-[var(--primary)] text-white shadow">
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer className="py-4 text-center text-gray-500 border-t bg-white">
+        <footer className="py-4 text-center text-gray-500 border-t bg-white mt-auto">
           © {new Date().getFullYear()} My Blog. All rights reserved.
         </footer>
       </body>
