@@ -13,7 +13,7 @@ export default function Navbar() {
         <Link href="/">
           <div className="flex md:space-x-2 items-center justify-center">
             <Image src="/favicon.png" width={44} height={44} alt="" />
-            <h1 className="text-sm md:text-xl font-bold">Aayush's Blog</h1>
+            <h1 className="text-sm md:text-xl font-bold">Aayush&apos;s Blog</h1>
           </div>
         </Link>
 
