@@ -4,7 +4,7 @@ date: "2025-12-31"
 author: "Aayush Kumar Fabwani"
 tags: ["Personal", "Reflection", "Adulthood", "New Year"]
 excerpt: "On the last day of the year, I reflect on finishing college, navigating uncertainty, and quietly stepping into adulthood."
-image: "/assets/images/last-day-of-the-year.jpeg"
+image: "/assets/images/last-day-of-the-year.jpg"
 ---
 
 As I write this blog, I sit in my room in my parent’s house, on the last day of the year. I have finished college and am back for a month before I leave for my internship in another new city. I will be leaving on the evening of 1st January. The end of today will not just signify the end of the year; it will mean the end of a phase for me. For me, 31st December, 2025 marks the end of the trial phase of adulthood. Tonight, when the clock strikes 12, when people start celebrating and fireworks cover the sky, I will say a little prayer of gratitude. I will express gratitude for everything good and bad that happened since I left for college. For my family being in good health. For all the people I met, all the people I stopped talking to, and all the people I still call when I feel like letting it all out.
