@@ -1,6 +1,6 @@
 ---
 title: "Last Day of the Year"
-date: "2025-12-31"
+date: "31ˢᵗ March, 2025"
 author: "Aayush Kumar Fabwani"
 tags: ["Personal", "Reflection", "Adulthood", "New Year"]
 excerpt: "On the last day of the year, I reflect on finishing college, navigating uncertainty, and quietly stepping into adulthood."
