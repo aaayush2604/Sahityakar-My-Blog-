@@ -4,3 +4,12 @@
   --primary: black;
   --secondary: #2f2e2e;
 }
+
+.blog-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.blog-content p {
+  margin: 1.75rem 0;
+}

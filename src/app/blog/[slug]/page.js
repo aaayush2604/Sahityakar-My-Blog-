@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }) {
         {post.date} • {post.author}
       </p>
       <div
-        className="prose max-w-none mb-8 text-white p-1.5 prose-p:my-6"
+        className="blog-content text-white p-1.5"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
 
